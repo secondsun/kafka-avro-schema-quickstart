@@ -64,6 +64,11 @@
       <artifactId>quarkus-kubernetes</artifactId>
     </dependency>
     <dependency>
+        <groupId>io.apicurio</groupId>
+    <artifactId>apicurio-common-rest-client-jdk</artifactId>
+      <version>0.0.9.Final</version>
+    </dependency>
+    <dependency>
       <groupId>io.rest-assured</groupId>
       <artifactId>rest-assured</artifactId>
       <scope>test</scope>
