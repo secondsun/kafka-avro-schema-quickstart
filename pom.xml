@@ -13,14 +13,14 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
-    <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
-    <quarkus.platform.version>2.1.3.Final</quarkus.platform.version>
+    <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
+    <quarkus.platform.version>999-SNAPSHOT</quarkus.platform.version>
     <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
-    <registry.version>2.1.0-SNAPSHOT</registry.version>
+    <registry.version>2.1.2.Final</registry.version>
   </properties>
   <dependencyManagement>
     <dependencies>
-      <dependency>
+      <dependency> 
         <groupId>${quarkus.platform.group-id}</groupId>
         <artifactId>${quarkus.platform.artifact-id}</artifactId>
         <version>${quarkus.platform.version}</version>
@@ -35,17 +35,16 @@
       <artifactId>quarkus-apicurio-registry-avro</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.redhat.cloud</groupId>
-      <artifactId>service-registry-binding-extension</artifactId>
-      <version>1.0.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-resteasy</artifactId>
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-smallrye-reactive-messaging-kafka</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-kubernetes-service-binding</artifactId>
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
@@ -65,10 +64,6 @@
       <artifactId>quarkus-kubernetes</artifactId>
     </dependency>
     <dependency>
-      <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-kubernetes-service-binding</artifactId>
-    </dependency>
-    <dependency>
       <groupId>io.rest-assured</groupId>
       <artifactId>rest-assured</artifactId>
       <scope>test</scope>
@@ -79,7 +74,6 @@
       <plugin>
         <groupId>${quarkus.platform.group-id}</groupId>
         <artifactId>quarkus-maven-plugin</artifactId>
-        <version>${quarkus.platform.version}</version>
         <extensions>true</extensions>
         <executions>
           <execution>
@@ -126,11 +120,8 @@
                   <goal>register</goal>
                 </goals>
                 <configuration>
-                  <!-- <registryUrl>https://service-registry-stage.apps.app-sre-stage-0.k3s7.p1.openshiftapps.com/t/1602aa52-6cc7-43bc-99a1-7239bd5fef86/api/v2</registryUrl> -->
+                  <registryUrl>https://service-registry-service-registry-production.apps.app-sre-prod-04.i5h0.p1.openshiftapps.com/t/09e34499-14a2-42b4-9dd1-ec037e55688d/api/v2</registryUrl> 
                   <artifactType>AVRO</artifactType>
-                  <artifacts>
-                    
-                  </artifacts>
                   <artifacts>
                   <artifact>
                         <groupId>demo.redhat.com</groupId>
