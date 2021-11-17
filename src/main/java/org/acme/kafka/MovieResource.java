@@ -20,6 +20,7 @@ import org.reactivestreams.Publisher;
 public class MovieResource {
     private static final Logger LOGGER = Logger.getLogger(MovieResource.class);
 
+    
     @Inject
     @Channel("movies-from-kafka")
     Publisher<Movie> movies;

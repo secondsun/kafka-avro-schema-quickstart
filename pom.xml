@@ -79,6 +79,7 @@
       <plugin>
         <groupId>${quarkus.platform.group-id}</groupId>
         <artifactId>quarkus-maven-plugin</artifactId>
+        <version>${quarkus.platform.version}</version>
         <extensions>true</extensions>
         <executions>
           <execution>
@@ -125,8 +126,11 @@
                   <goal>register</goal>
                 </goals>
                 <configuration>
-                  <registryUrl>https://service-registry-service-registry-production.apps.app-sre-prod-04.i5h0.p1.openshiftapps.com/t/09e34499-14a2-42b4-9dd1-ec037e55688d/api/v2</registryUrl> 
+                  <registryUrl>https://service-registry-service-registry-production.apps.app-sre-prod-04.i5h0.p1.openshiftapps.com/t/09e34499-14a2-42b4-9dd1-ec037e55688d/apis/registry/v2</registryUrl> 
                   <artifactType>AVRO</artifactType>
+                  <clientId>srvc-acct-3bc645be-c9ce-4c19-83d9-e06f1e7785f0</clientId>
+                  <clientSecret>60d4dfd8-ae66-4661-aec2-512a4f756034</clientSecret>
+                  <authServerUrl>https://identity.api.openshift.com/auth/realms/rhoas</authServerUrl>
                   <artifacts>
                   <artifact>
                         <groupId>demo.redhat.com</groupId>
